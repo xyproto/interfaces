@@ -1,11 +1,9 @@
-# pip
+# pipi
 
-**pip** (pretty ip listings) lists network interfaces and adresses.
-
-[![asciicast](https://asciinema.org/a/2mqbw6530bgff6ll75xyhpsof.png)](https://asciinema.org/a/2mqbw6530bgff6ll75xyhpsof)
-
-MIT licensed
+**pipi** (pretty ip information) shows a colorful list of network interfaces and adresses.
 
 Easy to install with:
 
-    go get github.com/xyproto/pip
+    go get github.com/xyproto/pipi
+
+MIT licensed
