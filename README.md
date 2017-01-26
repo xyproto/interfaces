@@ -1,6 +1,6 @@
-# pipi
+# PIPi
 
-**pipi** (pretty ip information) shows a colorful list of network interfaces and adresses.
+**PIPi** (pretty ip information) shows a colorful list of network interfaces and adresses.
 
 ![asciinema screencast](https://github.com/xyproto/pipi/raw/master/pipi.gif)
 
