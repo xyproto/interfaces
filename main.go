@@ -9,8 +9,11 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/docopt/docopt-go"
 	"github.com/xyproto/term"
 )
+
+const versionString = "PIPi 1.0"
 
 var (
 	noHighlightPrefixes = []string{"vbox", "docker", "lo"}
@@ -25,8 +28,27 @@ func pad(s string, n int) string {
 }
 
 func main() {
+	usage := `PIPi
+
+Usage:
+  pipi
+  pipi -s | --short
+  pipi -h | --help
+  pipi -v | --version
+
+Options:
+  -h --help     This help screen
+  -v --version  Version information
+  -s --short    Shorter output`
+
 	enableColors := runtime.GOOS != "windows"
 	o := term.NewTextOutput(enableColors, true)
+
+	// Parse arguments
+	arguments, err := docopt.Parse(usage, nil, true, versionString, false)
+	if err != nil {
+		log.Fatalln(err)
+	}
 
 	ifaces, err := net.Interfaces()
 	if err != nil {
@@ -48,22 +70,28 @@ func main() {
 		paddedName := pad(iface.Name, 8)
 
 		if highlight {
-			fmt.Fprintf(&w, o.White(paddedName))
+			fmt.Fprintf(&w, o.DarkRed(paddedName))
 		} else {
 			fmt.Fprintf(&w, o.LightGreen(paddedName))
 		}
 
 		hwAddr := iface.HardwareAddr.String()
 		if hwAddr == "" {
-			fmt.Fprintf(&w, "\t\t%s", o.DarkRed(pad("-", 17)))
+			fmt.Fprintf(&w, "\t\t%s", o.LightYellow(pad("-", 17)))
 		} else {
-			fmt.Fprintf(&w, "\t\t%s", o.DarkRed(hwAddr))
+			fmt.Fprintf(&w, "\t\t%s", o.LightYellow(hwAddr))
 		}
 
-		fmt.Fprintf(&w, "  %s", o.DarkPurple("MTU "+strconv.Itoa(iface.MTU)))
+		fmt.Fprintf(&w, "  %s", o.DarkPurple(pad("MTU "+strconv.Itoa(iface.MTU), 9)))
 		fmt.Fprintf(&w, "  %s", o.DarkGray(iface.Flags.String()))
 
 		fmt.Println(w.String())
+
+		if arguments["--short"].(bool) {
+			// Skip the interface details
+			continue
+		}
+
 		w = bytes.Buffer{}
 
 		addrs, err := iface.Addrs()
@@ -75,7 +103,7 @@ func main() {
 			adrstr := a.String()
 			if strings.Contains(adrstr, "/") {
 				parts := strings.Split(adrstr, "/")
-				adrstr = strings.Replace(adrstr, parts[0], o.LightYellow(parts[0]), -1)
+				adrstr = strings.Replace(adrstr, parts[0], o.White(parts[0]), -1)
 			}
 			fmt.Fprintf(&w, "  %s\t%s\t%s\n", o.LightBlue("adr"), o.White(pad(adrstr, 32+11)), o.DarkGray("(")+a.Network()+o.DarkGray(")"))
 		}

@@ -1,6 +1,6 @@
-# pipi
+# PIPi [![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/xyproto/pipi/master/LICENSE) [![Report Card](https://img.shields.io/badge/go_report-A+-brightgreen.svg?style=flat)](http://goreportcard.com/report/xyproto/pipi)
 
-**pipi** (pretty ip information) shows a colorful list of network interfaces and adresses.
+**PIPi** (pretty ip information) shows a colorful list of network interfaces and adresses.
 
 ![asciinema screencast](https://github.com/xyproto/pipi/raw/master/pipi.gif)
 
