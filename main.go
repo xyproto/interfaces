@@ -55,9 +55,9 @@ func main() {
 
 		hwAddr := iface.HardwareAddr.String()
 		if hwAddr == "" {
-			fmt.Fprintf(&w, "\t\t%s", o.LightYellow(pad("-", 17)))
+			fmt.Fprintf(&w, "\t\t%s", o.DarkRed(pad("-", 17)))
 		} else {
-			fmt.Fprintf(&w, "\t\t%s", o.LightYellow(hwAddr))
+			fmt.Fprintf(&w, "\t\t%s", o.DarkRed(hwAddr))
 		}
 
 		fmt.Fprintf(&w, "  %s", o.DarkPurple("MTU "+strconv.Itoa(iface.MTU)))
@@ -75,7 +75,7 @@ func main() {
 			adrstr := a.String()
 			if strings.Contains(adrstr, "/") {
 				parts := strings.Split(adrstr, "/")
-				adrstr = strings.Replace(adrstr, parts[0], o.DarkRed(parts[0]), -1)
+				adrstr = strings.Replace(adrstr, parts[0], o.LightYellow(parts[0]), -1)
 			}
 			fmt.Fprintf(&w, "  %s\t%s\t%s\n", o.LightBlue("adr"), o.White(pad(adrstr, 32+11)), o.DarkGray("(")+a.Network()+o.DarkGray(")"))
 		}
