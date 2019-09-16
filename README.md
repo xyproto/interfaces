@@ -1,11 +1,14 @@
-# PIPi [![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/xyproto/pipi/master/LICENSE) [![Report Card](https://img.shields.io/badge/go_report-A+-brightgreen.svg?style=flat)](http://goreportcard.com/report/xyproto/pipi)
+# Interfaces [![License](http://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://raw.githubusercontent.com/xyproto/interfaces/master/LICENSE) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/interfaces)](https://goreportcard.com/report/github.com/xyproto/interfaces)
 
-**PIPi** (pretty ip information) shows a colorful list of network interfaces and adresses.
+**Interfaces** shows a colorful list of network interfaces and adresses.
 
-![asciinema screencast](https://github.com/xyproto/pipi/raw/master/pipi.gif)
+<!-- ![asciinema screencast](https://github.com/xyproto/pipi/raw/master/pipi.gif) --> 
 
-Easy to install with:
+## Installation
 
-    go get github.com/xyproto/pipi
+    go get -i github.com/xyproto/interfaces
 
-MIT licensed
+## General info
+
+* License: MIT
+* Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
