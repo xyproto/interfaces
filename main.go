@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/docopt/docopt-go"
-	"github.com/xyproto/term"
+	"github.com/xyproto/textoutput"
 )
 
 const versionString = "Interfaces 1.1.0"
@@ -42,7 +42,7 @@ Options:
   -s --short    Shorter output`
 
 	enableColors := runtime.GOOS != "windows"
-	o := term.NewTextOutput(enableColors, true)
+	o := textoutput.NewTextOutput(enableColors, true)
 
 	// Parse arguments
 	arguments, err := docopt.Parse(usage, nil, true, versionString, false)
