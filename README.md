@@ -2,8 +2,6 @@
 
 **Interfaces** shows a colorful list of network interfaces and adresses.
 
-<!-- ![asciinema screencast](https://github.com/xyproto/pipi/raw/master/pipi.gif) --> 
-
 ## Installation
 
     go get -i github.com/xyproto/interfaces
