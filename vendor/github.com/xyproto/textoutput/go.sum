@@ -1,9 +1,5 @@
-github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815 h1:bWDMxwH3px2JBh6AyO7hdCn/PkvCZXii8TGj7sbtEbQ=
-github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815/go.mod h1:WwZ+bS3ebgob9U8Nd0kOddGdZWjyMGR8Wziv+TBNwSE=
 github.com/pkg/term v0.0.0-20190109203006-aa71e9d9e942 h1:A7GG7zcGjl3jqAqGPmcNjd/D9hzL95SuoOQAaFNdLU0=
 github.com/pkg/term v0.0.0-20190109203006-aa71e9d9e942/go.mod h1:eCbImbZ95eXtAUIbLAuAVnBnwf83mjf6QIVH8SHYwqQ=
-github.com/xyproto/textoutput v1.2.1 h1:PTuDFPVXu5LmYKDyZqu+1okYvb+79cj5mF55IET5KYk=
-github.com/xyproto/textoutput v1.2.1/go.mod h1:tExUy4wiE6t397HWgDLvNgs6NhrdltBIZGP+AHV4kB8=
 github.com/xyproto/vt100 v1.0.1 h1:Pzz3muUW/XVX/sjSAwaUhyydFSrC0NWXgCqyXx4Ne60=
 github.com/xyproto/vt100 v1.0.1/go.mod h1:w3/QDDJMEllFWidelL6SAPydmtYPPvqdVyAw9i616F4=
 golang.org/x/sys v0.0.0-20190913121621-c3b328c6e5a7 h1:wYqz/tQaWUgGKyx+B/rssSE6wkIKdY5Ee6ryOmzarIg=
