@@ -13,7 +13,7 @@ import (
 	"github.com/xyproto/term"
 )
 
-const versionString = "PIPi 1.0"
+const versionString = "Interfaces 1.1.0"
 
 var (
 	noHighlightPrefixes = []string{"vbox", "docker", "lo"}
@@ -28,13 +28,13 @@ func pad(s string, n int) string {
 }
 
 func main() {
-	usage := `PIPi
+	usage := `Interfaces
 
 Usage:
-  pipi
-  pipi -s | --short
-  pipi -h | --help
-  pipi -v | --version
+  interfaces
+  interfaces -s | --short
+  interfaces -h | --help
+  interfaces -v | --version
 
 Options:
   -h --help     This help screen
