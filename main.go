@@ -84,11 +84,21 @@ Options:
 
 		fmt.Fprintf(&w, "  %s", o.DarkPurple(pad("MTU "+strconv.Itoa(iface.MTU), 9)))
 		fmt.Fprint(&w, "  ")
-		for i, flag := range strings.Split(iface.Flags.String(), "|") {
+		flags := strings.Split(iface.Flags.String(), "|")
+		if len(flags) > 0 && flags[0] != "up" {
+			fmt.Fprintf(&w, o.DarkGray("↓    | "))
+		}
+		for i, flag := range flags {
 			if i > 0 {
 				fmt.Fprintf(&w, o.DarkGray(" | "))
 			}
-			fmt.Fprintf(&w, o.DarkBlue(flag))
+			if flag == "up" {
+				fmt.Fprintf(&w, o.LightGreen("↑ ") + o.DarkGreen(flag))
+			} else if flag == "loopback" {
+				fmt.Fprintf(&w, o.DarkBlue(flag))
+			} else {
+				fmt.Fprintf(&w, o.DarkCyan(flag))
+			}
 		}
 
 		fmt.Println(w.String())
