@@ -83,7 +83,13 @@ Options:
 		}
 
 		fmt.Fprintf(&w, "  %s", o.DarkPurple(pad("MTU "+strconv.Itoa(iface.MTU), 9)))
-		fmt.Fprintf(&w, "  %s", o.DarkGray(iface.Flags.String()))
+		fmt.Fprint(&w, "  ")
+		for i, flag := range strings.Split(iface.Flags.String(), "|") {
+			if i > 0 {
+				fmt.Fprintf(&w, o.DarkGray(" | "))
+			}
+			fmt.Fprintf(&w, o.DarkBlue(flag))
+		}
 
 		fmt.Println(w.String())
 
