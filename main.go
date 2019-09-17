@@ -13,7 +13,7 @@ import (
 	"github.com/xyproto/textoutput"
 )
 
-const versionString = "Interfaces 1.1.0"
+const versionString = "interfaces 2.0.0"
 
 var (
 	noHighlightPrefixes = []string{"vbox", "docker", "lo"}
@@ -28,18 +28,18 @@ func pad(s string, n int) string {
 }
 
 func main() {
-	usage := `Interfaces
+	usage := `interfaces
 
 Usage:
   interfaces
-  interfaces -s | --short
+  interfaces -l | --long
   interfaces -h | --help
   interfaces -v | --version
 
 Options:
   -h --help     This help screen
   -v --version  Version information
-  -s --short    Shorter output`
+  -l --long     Longer output`
 
 	enableColors := runtime.GOOS != "windows"
 	o := textoutput.NewTextOutput(enableColors, true)
@@ -87,7 +87,7 @@ Options:
 
 		fmt.Println(w.String())
 
-		if arguments["--short"].(bool) {
+		if !arguments["--long"].(bool) {
 			// Skip the interface details
 			continue
 		}
