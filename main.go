@@ -13,7 +13,7 @@ import (
 	"github.com/xyproto/textoutput"
 )
 
-const versionString = "interfaces 2.1.0"
+const versionString = "interfaces 2.2.0"
 
 var (
 	noHighlightPrefixes = []string{"vbox", "docker", "lo"}

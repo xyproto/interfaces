@@ -9,5 +9,5 @@ Display a highlighted list of all network interfaces and adresses, using the Go 
 ## General info
 
 * License: MIT
-* Version: 2.1.0
+* Version: 2.2.0
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
