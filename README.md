@@ -4,7 +4,13 @@ Display a highlighted list of all network interfaces and adresses, using the Go 
 
 ## Installation
 
+Development version. May require Go 1.12 or later.
+
     go get -u github.com/xyproto/interfaces
+
+## Screenshot
+
+![screenshot](img/screenshot.png)
 
 ## General info
 
