@@ -1,4 +1,6 @@
-# Interfaces ![Build](https://github.com/xyproto/interfaces/workflows/Build/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/interfaces)](https://goreportcard.com/report/github.com/xyproto/interfaces) [![License](https://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/interfaces/main/LICENSE)
+# Interfaces
+
+![Build](https://github.com/xyproto/interfaces/workflows/Build/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/xyproto/interfaces)](https://goreportcard.com/report/github.com/xyproto/interfaces) [![License](https://img.shields.io/badge/license-BSD-green.svg?style=flat)](https://raw.githubusercontent.com/xyproto/interfaces/main/LICENSE)
 
 Display a highlighted list of all network interfaces and adresses, using the Go standard library.
 
