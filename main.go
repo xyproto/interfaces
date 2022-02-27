@@ -67,7 +67,7 @@ Options:
 			}
 		}
 
-		paddedName := pad(iface.Name, 8)
+		paddedName := pad(iface.Name, 12)
 
 		if highlight {
 			fmt.Fprintf(&w, o.DarkRed(paddedName))
