@@ -1,8 +1,9 @@
 module github.com/xyproto/textoutput
 
-go 1.12
+go 1.10
 
 require (
-	github.com/xyproto/vt100 v1.4.0
-	golang.org/x/sys v0.0.0-20190927073244-c990c680b611 // indirect
+	github.com/mattn/go-colorable v0.1.11 // indirect
+	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d
+	github.com/xyproto/vt100 v1.9.9
 )
