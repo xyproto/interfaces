@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -13,11 +14,9 @@ import (
 	"github.com/xyproto/textoutput"
 )
 
-const versionString = "interfaces 1.2.1"
+const versionString = "interfaces 1.2.2"
 
-var (
-	noHighlightPrefixes = []string{"vbox", "docker", "lo"}
-)
+var noHighlightPrefixes = []string{"vbox", "docker", "lo"}
 
 func pad(s string, n int) string {
 	var padding string
@@ -45,7 +44,8 @@ Options:
 	o := textoutput.NewTextOutput(enableColors, true)
 
 	// Parse arguments
-	arguments, err := docopt.Parse(usage, nil, true, versionString, false)
+	argv := flag.Args()
+	arguments, err := docopt.ParseArgs(usage, argv, versionString)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -70,9 +70,9 @@ Options:
 		paddedName := pad(iface.Name, 12)
 
 		if highlight {
-			fmt.Fprintf(&w, o.DarkRed(paddedName))
+			fmt.Fprint(&w, o.DarkRed(paddedName))
 		} else {
-			fmt.Fprintf(&w, o.LightGreen(paddedName))
+			fmt.Fprint(&w, o.LightGreen(paddedName))
 		}
 
 		hwAddr := iface.HardwareAddr.String()
@@ -86,18 +86,18 @@ Options:
 		fmt.Fprint(&w, "  ")
 		flags := strings.Split(iface.Flags.String(), "|")
 		if len(flags) > 0 && flags[0] != "up" {
-			fmt.Fprintf(&w, o.DarkGray("↓    | "))
+			fmt.Fprint(&w, o.DarkGray("↓    | "))
 		}
 		for i, flag := range flags {
 			if i > 0 {
-				fmt.Fprintf(&w, o.DarkGray(" | "))
+				fmt.Fprint(&w, o.DarkGray(" | "))
 			}
 			if flag == "up" {
-				fmt.Fprintf(&w, o.LightGreen("↑ ") + o.DarkGreen(flag))
+				fmt.Fprintf(&w, o.LightGreen("↑ ")+o.DarkGreen(flag))
 			} else if flag == "loopback" {
-				fmt.Fprintf(&w, o.DarkBlue(flag))
+				fmt.Fprint(&w, o.DarkBlue(flag))
 			} else {
-				fmt.Fprintf(&w, o.DarkCyan(flag))
+				fmt.Fprint(&w, o.DarkCyan(flag))
 			}
 		}
 
