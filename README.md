@@ -15,5 +15,5 @@ Install the latest release tag, using `go install`. Requires Go 1.17 or later:
 ## General info
 
 * License: BSD-3
-* Version: 2.2.1
+* Version: 1.2.1
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
