@@ -30,8 +30,8 @@ func main() {
 	usage := `interfaces
 
 Usage:
-  interfaces
-  interfaces -l | --long
+  interfaces [NAME]
+  interfaces -l | --long [NAME]
   interfaces -h | --help
   interfaces -v | --version
 
@@ -55,7 +55,14 @@ Options:
 		log.Fatalln(err)
 	}
 
+	specifiedInterfaceName, onlySpecificInterfaces := arguments["NAME"].(string)
+
 	for _, iface := range ifaces {
+
+		if onlySpecificInterfaces && iface.Name != specifiedInterfaceName {
+			continue
+		}
+
 		var w bytes.Buffer
 		fmt.Fprintf(&w, "%s%s%s ", o.DarkGray("["), o.LightBlue(strconv.Itoa(iface.Index)), o.DarkGray("]"))
 
