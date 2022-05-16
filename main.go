@@ -14,9 +14,9 @@ import (
 	"github.com/xyproto/textoutput"
 )
 
-const versionString = "interfaces 1.2.3"
+const versionString = "interfaces 1.3.0"
 
-var noHighlightPrefixes = []string{"vbox", "docker", "lo"}
+var noHighlightPrefixes = []string{"docker", "lo", "vbox"}
 
 func pad(s string, n int) string {
 	var padding string
